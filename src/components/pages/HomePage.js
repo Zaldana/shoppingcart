@@ -46,7 +46,7 @@ const HomePage = (props) => {
                                 component="img"
                                 height="194"
                                 image={product.image}
-                                alt="Paella dish"
+                                alt={product.title}
                             />
                             <CardContent>
                                 <Typography variant="body2" color="text.secondary">
