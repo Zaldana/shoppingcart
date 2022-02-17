@@ -9,8 +9,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
-const pages = [ 'Cart' ];
+const pages = {
+    name: "Cart",
+    to: "/cart"
+};
 
 const ResponsiveAppBar = () => {
     const [ anchorElNav, setAnchorElNav ] = React.useState(null);
@@ -66,8 +70,15 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                    <Typography
+                                        component={Link}
+                                        to={page.to}
+                                        textAlign="center">
+                                        
+                                        {page.name}
+                                    
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
