@@ -4,10 +4,14 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import { useShoppingCart } from '../context/cartContext';
 
 const CartItem = (props) => {
 
+    const {
+        removeItemFromCart
+    } = useShoppingCart();
+    
     const {
         cartItem: {
             id,
@@ -42,9 +46,9 @@ const CartItem = (props) => {
             </Box>
             <Box display="flex" flexDirection="column" justifyContent="center">
                 <Box mb={1} px={2}>
-                    {/* <IconButton onClick={() => removeItem(id)}>
+                    <IconButton onClick={() => removeItemFromCart(id)}>
                         <DeleteForeverIcon color="error" />
-                    </IconButton> */}
+                    </IconButton>
                 </Box>
             </Box>
         </Card>

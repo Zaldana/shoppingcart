@@ -26,9 +26,9 @@ const ResponsiveAppBar = () => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                            sx={{ mr: 2, textDecoration: "none", color: "white", display: { xs: 'none', md: 'flex' } }}
                     >
-                        Shopping
+                        Store
                         </Typography>
                     </Link>
 
@@ -37,18 +37,23 @@ const ResponsiveAppBar = () => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ flexGrow: 2, display: { xs: 'flex', md: 'none' } }}
+                        sx={{ textDecoration: "none", flexGrow: 2, display: { xs: 'flex', md: 'none' } }}
                     >
-                        LOGO
+                        Store
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
           
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box sx={{ textDecoration: "none", flexGrow: 0 }}>
                         {Object.keys(pages).map((item, i) => (                 
                             <Link to={pages[item].to}>
                                 <Button
                                     key={pages[ item ].name}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                    sx={{
+                                        textDecoration: "none",
+                                        my: 2,
+                                        color: 'white',
+                                        display: 'block'
+                                    }}
                                 >
                                     {pages[item].name}
                                 </Button>

@@ -1,16 +1,19 @@
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import React, { useContext } from 'react';
+import { cartContext, useShoppingCart } from '../context/cartContext';
 
 
 export default function ProductGrid(props) {
+
+    const {
+        addItemToCart
+    } = useShoppingCart();
 
     const {
         product,
@@ -24,6 +27,10 @@ export default function ProductGrid(props) {
         description,
         image,
     } = product;
+
+    const handleAddToCartButton = () => {
+        addItemToCart(product)
+    }
 
     return (
         <Card sx={{ mx: 'auto', maxWidth: 345 }} style={{ paddingTop: '10px' }}>
@@ -46,11 +53,9 @@ export default function ProductGrid(props) {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <Button variant="text" >Add to cart</Button>
-                <IconButton aria-label="add to favorites" sx={{ marginLeft: 'auto' }}>
-                    <FavoriteIcon />
-                </IconButton>
+                <Button variant="text" onClick={handleAddToCartButton}>Add to cart</Button>
             </CardActions>
         </Card>
     );
 }
+
