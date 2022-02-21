@@ -12,8 +12,11 @@ function App() {
       <div className="App">
         <BrowserRouter>
         <Routes>
-          {/* <Route path="cart" element={<CartPage />} /> */}
-            <Route index element={<HomePage />} />
+          <Route index element={<HomePage />} />
+          <Route
+            path="cart"
+            element={<CartPage />}
+          />
           </Routes>
         </BrowserRouter>
       </div>

@@ -13,7 +13,7 @@ const CartPage = (props) => {
 
     return (
         <Layout>
-            <h1>shoppingCart</h1>
+            <h1>shopping Cart</h1>
             {/* <Box p={4}>
                 {shoppingCart.map(item => (
                     <Box mb={4} key={item.id}>
